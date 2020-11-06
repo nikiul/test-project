@@ -165,3 +165,32 @@ a.card-link:hover {
 }
 
 /* -------- sidebar -------- */
+
+.widget {
+    position: relative;
+}
+
+.widget__title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.16;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.widget__title::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('./../img/icons/chevron-up.svg');
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.widget__body {
+
+}
