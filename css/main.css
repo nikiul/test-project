@@ -311,3 +311,88 @@ a.card-link:hover {
     line-height: 1.18;
     color: #000;
 }
+
+/* ------ checkbox ------- */
+
+.checkbox {
+    display: block;
+    cursor: pointer;
+}
+
+.checkbox + .checkbox {
+    margin-top: 15px;
+}
+
+.checkbox__real {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+}
+
+.checkbox__fake {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: transparent;
+    border: 1px solid #777;
+}
+
+.checkbox__real:checked + .checkbox__fake {
+    background-color: #ffe074;
+}
+
+.checkbox__real:checked + .checkbox__fake::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-image: url('./../img/icons/check.svg');
+    background-size: initial;
+    background-position: center;
+    transform: translate(-50%,-50%);
+}
+
+.checkbox__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.18;
+    color: #000;
+}
+
+.checkbox__real:checked ~ .checkbox__title {
+    font-weight: 500;
+}
+
+/* -------- hedden-elements widget --------- */
+
+.widget__hidden {
+    display: none;
+}
+
+.widget__show-hidden {
+    margin-top: 15px;
+    padding: 0;
+    background: transparent;
+    display: inline-block;
+    border: none;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.19;
+    color: #4290c9;
+    cursor: pointer;
+    transition: color 0.2s ease-in;
+}
+
+.widget__show-hidden:hover {
+    color: #0b4670;
+}
