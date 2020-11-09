@@ -396,3 +396,59 @@ a.card-link:hover {
 .widget__show-hidden:hover {
     color: #0b4670;
 }
+
+/* --------- toggle ---------- */
+
+.toggle {
+    cursor: pointer;
+}
+
+.toggle__real {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+}
+
+.toggle__real:checked + .toggle__fake {
+    background: #FFE074;
+}
+
+.toggle__real:checked + .toggle__fake::before {
+    left: 19px;
+}
+
+.toggle__fake {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 37px;
+    height: 20px;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    vertical-align: bottom;
+}
+
+.toggle__fake::before {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: #3c3c3c;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+.toggle__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.18;
+    color: #000;
+}
+
+.toggle__real:checked ~ .toggle__title {
+    font-weight: 500;
+}
