@@ -85,6 +85,10 @@ img {
     margin-bottom: 30px;
 }
 
+.card-link--hidden {
+    display: none !important;
+}
+
 /* --------------Card-------------- */
 
 a.card-link {
@@ -225,6 +229,7 @@ a.card-link:hover {
     line-height: 1.16;
     color: #000000;
     margin-bottom: 21px;
+    cursor: pointer;
 }
 
 .widget__title::after {
@@ -240,8 +245,16 @@ a.card-link:hover {
     background-position: center;
 }
 
+.widget__title--active::after {
+    transform: rotate(180deg);
+}
+
 .widget__body {
 
+}
+
+.widget__body--hidden {
+    display: none;
 }
 
 /* --------- locations button group ----------- */
