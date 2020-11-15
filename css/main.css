@@ -382,6 +382,10 @@ a.card-link:hover {
     cursor: pointer;
 }
 
+.checkbox--hidden {
+    display: none;
+}
+
 .checkbox + .checkbox {
     margin-top: 15px;
 }
@@ -440,7 +444,7 @@ a.card-link:hover {
     display: none;
 }
 
-.widget__show-hidden {
+.widget__btn-show-hidden {
     margin-top: 15px;
     padding: 0;
     background: transparent;
@@ -456,7 +460,11 @@ a.card-link:hover {
     transition: color 0.2s ease-in;
 }
 
-.widget__show-hidden:hover {
+.widget__btn-show-hidden:active .widget__btn-show-hidden:focus {
+    outline: none;
+}
+
+.widget__btn-show-hidden:hover {
     color: #0b4670;
 }
 

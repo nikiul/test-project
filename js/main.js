@@ -29,6 +29,7 @@ const widgets = document.querySelectorAll('.widget');
 widgets.forEach(function(widget){
     // Слушаем клик внутри виджета
     widget.addEventListener('click', function(e) {
+        // Если клик по заголовку,то скрываем/показываем тело виджета
         if (e.target.classList.contains('widget__title')) {
             e.target.classList.toggle('widget__title--active')
             e.target.nextElementSibling.classList.toggle('widget__body--hidden');
@@ -58,3 +59,26 @@ topLocationCheckboxes.forEach(function(item){
         }
     })
 })
+
+// Показать еще 3 доп опции в виджете с фильтрами
+const showMoreOptions = document.querySelector('.widget__btn-show-hidden');
+const hiddenCheckBoxes = document.querySelectorAll('.checkbox--hidden');
+
+showMoreOptions.onclick = function(){
+    // Если блоки были скрыты,значит показываем 
+    if (showMoreOptions.dataset.options == 'hidden') {
+        hiddenCheckBoxes.forEach(function(item){
+            item.style.display = 'block';
+        })
+        showMoreOptions.innerText = "Скрыть дополнительные опции";
+        showMoreOptions.dataset.options = 'visible';
+    }
+    // Если блоки были видны, значит скрываем  
+    else if (showMoreOptions.dataset.options == 'visible') {
+        hiddenCheckBoxes.forEach(function(item){
+            item.style.display = 'none';
+        });
+        showMoreOptions.innerText = "Показать ещё";
+        showMoreOptions.dataset.options = 'hidden';
+    }
+}
