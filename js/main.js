@@ -30,7 +30,6 @@ btnShowMoreCards.addEventListener('click', function() {
     })
 })
 
-
 // show/hide widgets
 const widgets = document.querySelectorAll('.widget');
 
@@ -74,7 +73,7 @@ const showMoreOptions = document.querySelector('.widget__btn-show-hidden');
 const hiddenCheckBoxes = document.querySelectorAll('.checkbox--hidden');
 
 showMoreOptions.onclick = function (e) {
-    e.preventDefault(); 
+    e.preventDefault();
     // Если блоки были скрыты,значит показываем
     if (showMoreOptions.dataset.options ==  'hidden') {
         hiddenCheckBoxes.forEach(function (item) {
