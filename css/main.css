@@ -460,7 +460,7 @@ a.card-link:hover {
     transition: color 0.2s ease-in;
 }
 
-.widget__btn-show-hidden:active .widget__btn-show-hidden:focus {
+.widget__btn-show-hidden:active, .widget__btn-show-hidden:focus {
     outline: none;
 }
 

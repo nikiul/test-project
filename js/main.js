@@ -1,3 +1,12 @@
+if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = function (callBack, thisArg) {
+        thisArg = thisArg || window;
+        for (var i = 0; i < this.length; i++) {
+            callBack.call(thisArg, this[i],i,this);
+        }
+    };
+}
+
 // burger menu  sidebar
 const sidebarToggleBtn = document.querySelector('.menu-icon-wrapper');
 const menuIcon = document.querySelector('.menu-icon')
@@ -64,21 +73,22 @@ topLocationCheckboxes.forEach(function(item){
 const showMoreOptions = document.querySelector('.widget__btn-show-hidden');
 const hiddenCheckBoxes = document.querySelectorAll('.checkbox--hidden');
 
-showMoreOptions.onclick = function(){
-    // Если блоки были скрыты,значит показываем 
-    if (showMoreOptions.dataset.options == 'hidden') {
-        hiddenCheckBoxes.forEach(function(item){
+showMoreOptions.onclick = function (e) {
+    e.preventDefault(); 
+    // Если блоки были скрыты,значит показываем
+    if (showMoreOptions.dataset.options ==  'hidden') {
+        hiddenCheckBoxes.forEach(function (item) {
             item.style.display = 'block';
-        })
-        showMoreOptions.innerText = "Скрыть дополнительные опции";
+        });
+        showMoreOptions.innerText = 'Скрыть дополнительные опции';
         showMoreOptions.dataset.options = 'visible';
     }
-    // Если блоки были видны, значит скрываем  
+    // Если блоки были видны,значит скрываем
     else if (showMoreOptions.dataset.options == 'visible') {
-        hiddenCheckBoxes.forEach(function(item){
+        hiddenCheckBoxes.forEach(function (item) {
             item.style.display = 'none';
         });
-        showMoreOptions.innerText = "Показать ещё";
-        showMoreOptions.dataset.options = 'hidden';
+        showMoreOptions.innerText = 'Показать ещё';
+        showMoreOptions.options = 'hidden';
     }
 }
